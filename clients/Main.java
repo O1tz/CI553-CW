@@ -22,6 +22,8 @@ import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
 
 import javax.swing.*;
+
+
 import java.awt.*;
 
 
@@ -31,7 +33,7 @@ import java.awt.*;
  * @author  Mike Smith University of Brighton
  * @version 2.0
  */
-class Main
+class Main 
 {
   // Change to false to reduce the number of duplicated clients
 
@@ -87,7 +89,7 @@ class Main
    */
   public void startCashierGUI_MVC(MiddleFactory mlf )
   {
-    JFrame  window = new JFrame();
+    JFrame  window = new JFrame ();
     window.setTitle( "Cashier Client MVC");
     window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
     Dimension pos = PosOnScrn.getPos();
