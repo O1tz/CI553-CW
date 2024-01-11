@@ -22,7 +22,7 @@ import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
 
 import javax.swing.*;
-
+import javax.swing.UIManager.LookAndFeelInfo;
 
 import java.awt.*;
 
@@ -49,6 +49,24 @@ class Main
    */
   public void begin()
   {
+	  try {
+		/**
+		 * this changes the look of the program, to give it a more mordern up
+		 */
+		  UIManager.put("nimbusBase", new Color(184,137,44));
+		  UIManager.put("nimbusBlueGrey", new Color(47,47,47));
+		  UIManager.put("control", new Color(47,47,47));
+		  UIManager.put("nimbusLightBackground", new Color(47,47,47));
+		  UIManager.put("textForeground", new Color(184,137,44));
+		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+		        if ("Nimbus".equals(info.getName())) {
+		            UIManager.setLookAndFeel(info.getClassName());
+		            break;
+		        }
+		    }
+		} catch (Exception e) {
+		    // If Nimbus is not available, you can set the GUI to another look and feel.
+		}
     //DEBUG.set(true); /* Lots of debug info */
     MiddleFactory mlf = new LocalMiddleFactory();  // Direct access
  
